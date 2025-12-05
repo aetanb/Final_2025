@@ -51,6 +51,15 @@ basicCC <- ggplot(dd2,aes(x=infected,y=prcnt*100,fill=treatment))
 basicCC + geom_bar(stat="identity", position = "dodge")
 ```
 
+
+The plot above displays the population of male people the if they caught and took the vaccine or had a placebo.
+
+Out of all the males who caught Covid, the ones who took the placebo are approximately around 75% and the men who took the vaccine was exceedingly small around 25%. Of the people who did fine, it was split 50/50 between people who took the placebo vs. the people who had the vaccine. 
+
+The barplots were generated using three main objects: dd2, basicC, and basicCC. The first object, dd2, appears in the Environment pane and contains four variables: treatment, infected, count, and prcnt (representing percent). This dataset is created using group_by() and summarize() to count the number of observations in each treatment–infection group, followed by mutate() to calculate the corresponding proportions.
+
+The second object, basicC, also visible in the Environment pane, includes 11 variables and is used to create the first barplot that displays raw counts across groups. The final object, basicCC, located in the Files pane, also contains 11 variables and is used to generate the second barplot, which visualizes the percentages of infected individuals by treatment group.
+
 ## Females
 
 
