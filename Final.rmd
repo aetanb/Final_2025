@@ -278,4 +278,19 @@ Only about 8.3% of the drug users who took the placebo got Covid-19, which is a 
 
 These numbers suggest that the Covid-19 vaccine was not effective for this group of drug users, since 91.7% of the vaccinated group still got Covid-19. Meanwhile, the placebo group had a much lower percentage of infections.
 
+### Inferential 
+
+```{r}
+chisq.test(table1)
+chisqtestGC(table1)
+drugfish <- fisher.test(table1)
+drugfish
+```
+
+The p-value is extremely small (0.000000000003). This means the results are very unlikely to be due to chance.
+
+Because of this, we reject the null hypothesis and accept the alternative.
+
+The odds ratio is 0.087. This means that people who took the placebo were about 0.087 times more likely to get COVID-19 than those who got the vaccine. This is a very strong difference and suggests that the vaccine is likely not effective.
+
 # Overall Results and Conclusions
