@@ -310,3 +310,13 @@ The section above shows the effectiveness of the COVID-19 vaccine for drug users
 The odds ratio gives another view of the vaccine’s effectiveness. For drug users, the odds ratio is about 8.04. The confidence interval for effectiveness ranges from about 2.65 to 17.86. These values show that the vaccine is not effective for this group.
 
 # Overall Results and Conclusions
+
+Covid-19 vaccination was fairly effective in protecting men from catching the virus. Their effectiveness rate was 73.8%, with a confidence interval of about 68.85 to 78.32.
+
+The vaccine was also effective for women. Their effectiveness rate was 65%, and the confidence interval was roughly 59.8 to 69.92.
+
+The vaccine appeared most effective for gay participants, with an effectiveness rate of 81% and a confidence interval of about 69 to 89.88.
+
+However, the vaccine was not effective for drug users. Their effectiveness rate was only 8.04%, and the confidence interval was around 2.65 to 17.86. This suggests the vaccine did not work well for this group.
+
+In conclusion, the vaccine was highly effective for gay participants and men, and reasonably effective for women. It is not recommended for drug users based on these results.
