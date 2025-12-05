@@ -85,6 +85,22 @@ As a result, we have strong evidence to reject the null hypothesis that COVID-19
 
 The estimated odds ratio is 2.82, meaning that individuals who received the placebo were nearly three times more likely to become infected with COVID-19 compared to those who received the vaccine. This represents a substantial difference and provides strong evidence that the vaccine is effective.
 
+```{r}
+effect <- Msfish$p.value/(Msfish$p.value +1)
+effectivenessM = Msfish$estimate/(Msfish$estimate +1)*100
+print(effectivenessM)
+```
+
+```{r}
+low=(Msfish$conf.int[1]/(Msfish$conf.int[1] +1))*100
+hi=(Msfish$conf.int[2]/(Msfish$conf.int[2] +1))*100
+options(digits=2)
+```
+
+The results above show the estimated effectiveness of the COVID-19 vaccine for males. Since an effectiveness value above 50% indicates that the vaccine provides meaningful protection, the values calculated here suggest that the vaccine is effective in reducing the risk of COVID-19 infection among males.
+
+The odds ratio provides another way to express vaccine effectiveness. For males, the estimated effectiveness is about 73.8%, and the corresponding confidence interval ranges from approximately 68.85% to 78.32%. This interval indicates that, with high confidence, the vaccine offers substantial protection.
+
 ## Females
 
 
