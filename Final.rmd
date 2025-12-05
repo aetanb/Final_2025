@@ -136,6 +136,21 @@ colPerc(table1)
 
 Among the females who became infected, 65% had taken the placebo, while only 35% had received the vaccine. For those who did not get Covid-19, the percentages were evenly split with 50% taking the placebo and 50% taking the vaccine. These findings indicate that the Covid-19 vaccine was effective for females, as a smaller proportion of vaccinated women contracted the virus compared to those who received the placebo. This difference is notable and highlights the vaccine’s impact.
 
+### Inferential 
+
+```{r}
+chisq.test(table1)
+chisqtestGC(table1)
+Fsfish <- fisher.test(table1)
+Fsfish
+```
+
+The most important part of these results comes from the Fisher’s Exact Test. The p-value is extremely small—close to 0—which means that the results are very unlikely to be due to chance.
+
+Because of this, we can reject the null hypothesis. In other words, being infected with Covid-19 is not independent of the treatment group. The treatment someone received (placebo or vaccine) is related to whether they got Covid-19.
+
+The odds ratio is 1.9, meaning that females who took the placebo were almost twice as likely to get Covid-19 compared to those who received the vaccine. This is a meaningful difference and supports the conclusion that the vaccine is likely effective.
+
 ## LGBTQ
 
 
