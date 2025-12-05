@@ -18,7 +18,16 @@ FinalDat <-read.csv(file="finalSumr2024.csv",header=TRUE)
 FinalData <- FinalDat  %>% select(-one_of("X"))
 FinalData <- FinalData %>%
 mutate(across(where(is.character), as.factor))
+FinalData$treatment <- relevel(FinalData$treatment,ref="placebo")
+#FinalData$infected <- relevel(FinalData$infected,ref="OK")
+F = filter(FinalData, sex =="F")
+M = filter(FinalData, sex =="M")
+gay = filter(FinalData, LGBTQ =="gay")
+Druguser = filter(FinalData, DrugUser =="yes")
 ```
+
+
+Seperating the variables into four different categories (M=Male, F=Female, gay, and drug users) was imperent as this allows the data to be correctly analyzed. The seperation of these variables also allows understanding if one should take the Covid-19 vaccine. 
 
 # Introduction
 
