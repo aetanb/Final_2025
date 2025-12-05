@@ -206,6 +206,21 @@ These numbers show the real percentages of people in the study who got COVID-19 
 
 The results match the estimates from the bar plot. A large percentage — 80% — of the people who took the placebo got COVID-19. In comparison, only 20% of the people who took the vaccine got COVID-19. Of the people who stayed healthy, 48% were from the placebo group and 52% were from the vaccine group. This shows that the COVID-19 vaccine is effective, because only a small portion of the vaccinated group got sick. People who took the placebo got COVID-19 much more often. This difference is important.
 
+### Inferential Results 
+
+```{r}
+chisq.test(table1)
+chisqtestGC(table1)
+gaysfish <- fisher.test(table1)
+gaysfish
+```
+
+The p-value is extremely small (0.0000007). This means the results are very unlikely to be due to chance.
+
+Because of this, we strongly reject the null hypothesis that getting COVID-19 is independent of sex.
+
+The odds ratio is 4.3. This means that people who took the placebo were about 4 times more likely to get COVID-19 than people who took the vaccine. This is a very important difference. It also shows that the vaccine is very likely effective. The odds ratio is larger for both males and females.
+
 ## Druggies
 
 
