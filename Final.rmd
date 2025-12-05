@@ -169,7 +169,30 @@ The odds ratio gives us an idea of how effective the vaccine is. For females, th
 
 ## LGBTQ
 
+### Barplot
 
+```{r}
+dd2 <- gay %>% group_by(infected,treatment) %>% summarize(count=n()) %>% mutate(prcnt=count/sum(count))
+
+
+# the group_by followed by summarize(count=n())
+
+basicC <- ggplot(dd2,aes(x=infected,y=count,fill=treatment))
+basicC + geom_bar(stat="identity",position="dodge")
+
+#Now for percentage plot
+
+basicCC <- ggplot(dd2,aes(x=infected,y=prcnt*100,fill=treatment)) 
+basicCC + geom_bar(stat="identity", position = "dodge")
+```
+
+This plot shows a group of gay people and the relationship between getting COVID-19 and whether they received the vaccine or a placebo.
+
+The first bar graph shows how many people got COVID-19 or stayed healthy, and whether they took the placebo or the vaccine. The second graph shows the percentage of people who took the placebo or the vaccine, and whether they got COVID-19 or not. Both graphs separate the people into groups based on whether they were infected and which treatment they received.
+
+Among the people who caught COVID-19, the group that took the placebo had a very high bar—around 80%. The group that took the vaccine had a much smaller bar, around 20%. Of the people who did not get COVID-19, about 48% had taken the placebo, while about 52% had taken the vaccine. This shows that, in this sample of gay people, those who took the placebo caught COVID-19 much more often than those who were vaccinated.
+
+The code used to make this barplot starts with the dataset named dd2. This dataset has four variables: treatment, infected, count, and prcnt. The first graph is created using the code named basicC, which is shown in the environment pane and contains 11 variables that help build the plot. The second graph uses the same code structure but displays percentages instead of counts.
 
 ## Druggies
 
