@@ -151,6 +151,22 @@ Because of this, we can reject the null hypothesis. In other words, being infect
 
 The odds ratio is 1.9, meaning that females who took the placebo were almost twice as likely to get Covid-19 compared to those who received the vaccine. This is a meaningful difference and supports the conclusion that the vaccine is likely effective.
 
+```{r}
+effect <- Fsfish$p.value/(Fsfish$p.value +1)
+effectivenessF = Fsfish$estimate/(Fsfish$estimate +1)*100
+print(effectivenessF)
+```
+
+```{r}
+low=(Fsfish$conf.int[1]/(Fsfish$conf.int[1] +1))*100
+hi=(Fsfish$conf.int[2]/(Fsfish$conf.int[2] +1))*100
+options(digits=2)
+```
+
+The section above shows the effectiveness of the COVID-19 vaccine for females. If the effectiveness is higher than 50%, it means the vaccine is doing its job. Based on the confidence interval shown, we can say that the vaccine is effective at protecting females from getting COVID-19. Even though it may not be as effective as it is for males, it still provides strong protection.
+
+The odds ratio gives us an idea of how effective the vaccine is. For females, the odds ratio is about 65. The confidence interval for effectiveness ranges from about 59.8 to 69.92.
+
 ## LGBTQ
 
 
