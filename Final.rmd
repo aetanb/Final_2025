@@ -54,7 +54,7 @@ basicCC + geom_bar(stat="identity", position = "dodge")
 
 The plot above displays the population of male people the if they caught and took the vaccine or had a placebo.
 
-Out of all the males who caught Covid, the ones who took the placebo are approximately around 75% and the men who took the vaccine was exceedingly small around 25%. Of the people who did fine, it was split 50/50 between people who took the placebo vs. the people who had the vaccine. 
+Among all the males who caught Covid, the ones who took the placebo are approximately around 75% and the men who took the vaccine was exceedingly small around 25%. Of the people who did fine, it was split 50/50 between people who took the placebo vs. the people who had the vaccine. 
 
 The barplots were generated using three main objects: dd2, basicC, and basicCC. The first object, dd2, appears in the Environment pane and contains four variables: treatment, infected, count, and prcnt (representing percent). This dataset is created using group_by() and summarize() to count the number of observations in each treatment–infection group, followed by mutate() to calculate the corresponding proportions.
 
@@ -125,6 +125,16 @@ The first bar graph presents the number of females who got Covid-19 versus those
 From the plot, about 65% of the females who contracted Covid-19 had received the placebo, while about 35% had received the vaccine. Among the females who did not contract Covid-19, the distribution is close to 50/50 between the vaccine and placebo groups. Compared to male participants, this suggests that fewer females contracted Covid-19 with the placebo, and more contracted Covid-19 with the vaccine. Still, the same general pattern appears: the placebo group shows a higher infection rate than the vaccine group.
 
 The R code used to create the barplot begins with the line starting with dd2. The dd2 dataset includes four variables: treatment, infected, count, and prcnt (percentage). The first graph is generated using the code labeled basicC, which uses the 11 variables stored in the environment panel. The final block of code—also named basicCC—uses these variables to create the percentage barplot shown in the second graph.
+
+### Numerical 
+
+```{r}
+table1 <- xtabs(~infected + treatment, data=F)
+rowPerc(table1)
+colPerc(table1)
+```
+
+Among the females who became infected, 65% had taken the placebo, while only 35% had received the vaccine. For those who did not get Covid-19, the percentages were evenly split with 50% taking the placebo and 50% taking the vaccine. These findings indicate that the Covid-19 vaccine was effective for females, as a smaller proportion of vaccinated women contracted the virus compared to those who received the placebo. This difference is notable and highlights the vaccine’s impact.
 
 ## LGBTQ
 
