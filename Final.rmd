@@ -194,6 +194,18 @@ Among the people who caught COVID-19, the group that took the placebo had a very
 
 The code used to make this barplot starts with the dataset named dd2. This dataset has four variables: treatment, infected, count, and prcnt. The first graph is created using the code named basicC, which is shown in the environment pane and contains 11 variables that help build the plot. The second graph uses the same code structure but displays percentages instead of counts.
 
+### Numerical Results
+
+```{r}
+table1 <- xtabs(~infected + treatment, data=gay)
+rowPerc(table1)
+colPerc(table1)
+```
+
+These numbers show the real percentages of people in the study who got COVID-19 after taking either the placebo or the vaccine.
+
+The results match the estimates from the bar plot. A large percentage — 80% — of the people who took the placebo got COVID-19. In comparison, only 20% of the people who took the vaccine got COVID-19. Of the people who stayed healthy, 48% were from the placebo group and 52% were from the vaccine group. This shows that the COVID-19 vaccine is effective, because only a small portion of the vaccinated group got sick. People who took the placebo got COVID-19 much more often. This difference is important.
+
 ## Druggies
 
 
