@@ -68,6 +68,7 @@ rowPerc(table1)
 colPerc(table1)
 ```
 
+These numerical results summarize the percentages of males who became infected with COVID-19 after receiving either the placebo or the vaccine. Among those who contracted COVID-19, 73.80% had taken the placebo, while only 26.20% had taken the vaccine, indicating a noticeable reduction in infections among vaccinated individuals. For the males who remained healthy, the percentages were nearly evenly split: 50.01% of the placebo group and 49.99% of the vaccine group were not infected. Overall, these results suggest that the vaccine is effective for males, as the proportion of infections is much lower among those who received the vaccine compared with the placebo group.
 
 ## Females
 
