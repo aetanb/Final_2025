@@ -221,7 +221,43 @@ Because of this, we strongly reject the null hypothesis that getting COVID-19 is
 
 The odds ratio is 4.3. This means that people who took the placebo were about 4 times more likely to get COVID-19 than people who took the vaccine. This is a very important difference. It also shows that the vaccine is very likely effective. The odds ratio is larger for both males and females.
 
+```{r}
+effect <- gaysfish$p.value/(gaysfish$p.value +1)
+effectivenessgays = gaysfish$estimate/(gaysfish$estimate +1)*100
+print(effectivenessgays)
+```
+
+```{r}
+low=(gaysfish$conf.int[1]/(gaysfish$conf.int[1] +1))*100
+hi=(gaysfish$conf.int[2]/(gaysfish$conf.int[2] +1))*100
+options(digits=2)
+```
+
+The section above shows the effectiveness of the COVID-19 vaccine for this group. If the effectiveness is above 50%, it means the vaccine works. Based on the interval shown, we can say the vaccine is very effective in protecting this group from getting COVID-19.
+
+The odds ratio also helps show how effective the vaccine is. For this group, the odds ratio is about 81. The confidence interval for effectiveness is roughly 69 to 89.88.
+
 ## Druggies
 
+```{r}
+dd2 <-  Druguser %>% group_by(infected,treatment) %>% summarize(count=n()) %>% mutate(prcnt=count/sum(count))
+
+
+# the group_by followed by summarize(count=n())
+
+basicC <- ggplot(dd2,aes(x=infected,y=count,fill=treatment))
+basicC + geom_bar(stat="identity",position="dodge")
+
+#Now for percentage plot
+
+basicCC <- ggplot(dd2,aes(x=infected,y=prcnt*100,fill=treatment)) 
+basicCC + geom_bar(stat="identity", position = "dodge")
+```
+
+The first graph displays the number of people who either got Covid or stayed healthy, and whether they received the vaccine or the placebo. The second graph shows the percentage of people in each group—placebo or vaccine—who did or did not get Covid. Both graphs divide people based on two things: whether they caught Covid and whether they took the vaccine or the placebo.
+
+Among the people who caught Covid, the group that took the placebo was much smaller, making up about 11%, while the group that took the vaccine made up about 89%. For the people who did not get Covid, the split was about 52% for those who took the placebo and about 48% for those who received the vaccine.
+
+The barplot was created using code that starts with the chunk named dd2. In the environment panel, dd2 can be seen holding four variables: treatment, infected, count, and prcent (short for percent). The second group of code is called basicC, which appears in the environment panel as well and includes a list of 11 variables. This section helps create the first plot. The last chunk of code is basicC$, found in the files pane. It contains the variables used to make the percentage plot, which is the second graph.
 
 # Overall Results and Conclusions
