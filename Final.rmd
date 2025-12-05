@@ -60,6 +60,15 @@ The barplots were generated using three main objects: dd2, basicC, and basicCC. 
 
 The second object, basicC, also visible in the Environment pane, includes 11 variables and is used to create the first barplot that displays raw counts across groups. The final object, basicCC, located in the Files pane, also contains 11 variables and is used to generate the second barplot, which visualizes the percentages of infected individuals by treatment group.
 
+### Numerical 
+
+```{r}
+table1 <- xtabs(~infected + treatment, data=M)
+rowPerc(table1)
+colPerc(table1)
+```
+
+
 ## Females
 
 
