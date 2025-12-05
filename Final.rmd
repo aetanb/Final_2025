@@ -103,6 +103,28 @@ The odds ratio provides another way to express vaccine effectiveness. For males,
 
 ## Females
 
+### Barplot
+
+```{r}
+dd2 <- F %>% group_by(infected,treatment) %>% summarize(count=n()) %>% mutate(prcnt=count/sum(count))
+
+
+# the group_by followed by summarize(count=n())
+
+basicC <- ggplot(dd2,aes(x=infected,y=count,fill=treatment))
+basicC + geom_bar(stat="identity",position="dodge")
+
+#Now for percentage plot
+
+basicCC <- ggplot(dd2,aes(x=infected,y=prcnt*100,fill=treatment)) 
+basicCC + geom_bar(stat="identity", position = "dodge")
+```
+
+The first bar graph presents the number of females who got Covid-19 versus those who did not, separated by whether they received the vaccine or the placebo. The second graph shows the percentage of females in each group—whether they were infected or not—based on whether they took the vaccine or the placebo.
+
+From the plot, about 65% of the females who contracted Covid-19 had received the placebo, while about 35% had received the vaccine. Among the females who did not contract Covid-19, the distribution is close to 50/50 between the vaccine and placebo groups. Compared to male participants, this suggests that fewer females contracted Covid-19 with the placebo, and more contracted Covid-19 with the vaccine. Still, the same general pattern appears: the placebo group shows a higher infection rate than the vaccine group.
+
+The R code used to create the barplot begins with the line starting with dd2. The dd2 dataset includes four variables: treatment, infected, count, and prcnt (percentage). The first graph is generated using the code labeled basicC, which uses the 11 variables stored in the environment panel. The final block of code—also named basicCC—uses these variables to create the percentage barplot shown in the second graph.
 
 ## LGBTQ
 
